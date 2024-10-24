@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Meal Saver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Centered Title -->
+        <div class="text-center animate-fade-in">
+            <h1 class="text-5xl font-bold text-green-600 mb-2">Register for Meal Saver</h1>
+            <p class="text-xl text-blue-600">Join us and be a part of the change!</p>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="mt-12 flex justify-center">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-2xl animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="p-8">
+                    <h3 class="text-3xl font-bold mb-6 text-green-700 text-center">Registration Form</h3>
+                    <form action="#" method="POST" class="space-y-4">
+                        <!-- Registration ID -->
+                        <div>
+                            <label for="registration-id" class="block text-lg font-medium text-blue-700">Registration ID</label>
+                            <input type="text" id="registration-id" name="registration-id" required class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-lg font-medium text-blue-700">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-lg font-medium text-blue-700">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div>
+                            <label for="mobile" class="block text-lg font-medium text-blue-700">Mobile Number</label>
+                            <input type="text" id="mobile" name="mobile" required class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Password -->
+                        <div>
+                            <label for="password" class="block text-lg font-medium text-blue-700">Password</label>
+                            <input type="password" id="password" name="password" required class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Year -->
+                        <div>
+                            <label for="year" class="block text-lg font-medium text-blue-700">Year</label>
+                            <select id="year" name="year" required class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Year</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+                        </div>
+
+                        <!-- Branch -->
+                        <div>
+                            <label for="branch" class="block text-lg font-medium text-blue-700">Branch</label>
+                            <select id="branch" name="branch" required class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Branch</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Electronics">Electronics & Telecommunication</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="ARE">ARE</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center mt-6">
+                            <input type="submit" value="Register" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

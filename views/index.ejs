@@ -42,9 +42,12 @@
                     <!-- Login Section -->
                     <div class="md:w-1/2 p-8 bg-white">
                         <h3 class="text-3xl font-bold mb-6 text-blue-700">New to Our Page?</h3>
+                        
                         <div class="space-y-4">
-                            <input type="submit" value="Login" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                            <input type="submit" value="Register" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                            <form action="/login">
+                            <input value="Login" type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"></form>
+                            <form action="/register">
+                            <input type="submit" href="/register" value="Register" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"></form>
                         </div>
                     </div>
                 </div>
