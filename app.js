@@ -6,16 +6,12 @@ const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 
-
-
-
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname , 'public')));
 app.use(cookieParser())
-
 
 app.get("/",(req,res)=>{
     res.render("index");
@@ -46,7 +42,7 @@ app.post("/register", async (req,res)=>{
                 });
                 let token = jwt.sign({email : email , userid : user._id } , "sahil");
                 res.cookie("token", token);
-                res.send("Registered");
+                res.render("login");
             })
         })
     }
@@ -58,7 +54,7 @@ app.get("/login", (req,res)=>{
 });
 
 app.get("/profile" ,isLoggedin,(req,res)=>{
-    res.render("profile")
+    res.render("profile", { user: req.user });
 })
 
 app.post("/login", async (req,res)=>{
@@ -69,7 +65,7 @@ app.post("/login", async (req,res)=>{
 
     bcrypt.compare(password,user.password , function(err, result) {
         if(result){
-            let token = jwt.sign({registrationid : registrationid , userid: user._id},"sahil");
+            let token = jwt.sign({registrationid : registrationid , userid: user._id , name : user.name },"sahil");
             res.cookie("token", token);
             res.redirect("/profile");            
         }
@@ -84,8 +80,9 @@ app.get("/logout" , (req,res)=>{
     res.redirect("/login");
 });
 
-function isLoggedin(){
-    if(req.cookies.token === "") {
+function isLoggedin(req, res, next){
+    const token = req.cookies.token;
+    if(!token) {
         return res.redirect("/login");
     }
     else {

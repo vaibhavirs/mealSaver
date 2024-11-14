@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Saver</title>
+    <title>Meal Saver - Reducing Food Waste</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -19,40 +19,92 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-        <!-- Centered Title -->
-        <div class="text-center animate-fade-in">
-            <h1 class="text-5xl font-bold text-green-600 mb-2">Meal Saver</h1>
-            <p class="text-xl text-blue-600">A step towards saving our precious resources</p>
-        </div>
+<body class="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen flex flex-col">
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-green-600">Meal Saver</a>
+            <ul class="flex space-x-6">
+                <li><a href="#" class="text-blue-600 hover:text-blue-800">Home</a></li>
+                <li><a href="#about" class="text-blue-600 hover:text-blue-800">About</a></li>
+                <li><a href="#contact" class="text-blue-600 hover:text-blue-800">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="mt-16 flex justify-center">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl animate-fade-in" style="animation-delay: 0.2s;">
-                <div class="md:flex">
-                    <!-- Welcome Section -->
-                    <div class="md:w-1/2 p-8 bg-gradient-to-br from-green-100 to-blue-100">
-                        <h3 class="text-3xl font-bold mb-4 text-green-700">Welcome to Meal Saver!</h3>
-                        <p class="text-lg text-blue-700 mb-6">Join us in our mission to reduce food waste and create a sustainable future.</p>
-                        <a href="#learn-more" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                            Learn More
-                        </a>
-                    </div>
+    <main class="flex-grow">
+        <div class="container mx-auto px-4 py-8">
+            <!-- Centered Title -->
+            <div class="text-center animate-fade-in">
+                <h1 class="text-5xl font-bold text-green-600 mb-2">Meal Saver</h1>
+                <p class="text-xl text-blue-600">A step towards saving our precious resources</p>
+            </div>
 
-                    <!-- Login Section -->
-                    <div class="md:w-1/2 p-8 bg-white">
-                        <h3 class="text-3xl font-bold mb-6 text-blue-700">New to Our Page?</h3>
-                        
-                        <div class="space-y-4">
-                            <form action="/login">
-                            <input value="Login" type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"></form>
-                            <form action="/register">
-                            <input type="submit" href="/register" value="Register" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"></form>
+            <div class="mt-16 flex justify-center">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="md:flex">
+                        <!-- Welcome Section -->
+                        <div class="md:w-1/2 p-8 bg-gradient-to-br from-green-100 to-blue-100">
+                            <h2 class="text-3xl font-bold mb-4 text-green-700">Welcome to Meal Saver!</h2>
+                            <p class="text-lg text-blue-700 mb-6">Join us in our mission to reduce food waste and create a sustainable future.</p>
+                            <form action="#about" method="GET">
+                                <input type="submit" value="Learn More" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 cursor-pointer">
+                            </form>
+                        </div>
+
+                        <!-- Login Section -->
+                        <div class="md:w-1/2 p-8 bg-white">
+                            <h2 class="text-3xl font-bold mb-6 text-blue-700">New to Our Page?</h2>
+                            
+                            <div class="space-y-4">
+                                <form action="/login">
+                                    <input type="submit" value="Login" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 cursor-pointer">
+                                </form>
+                                <form action="/register">
+                                    <input type="submit" value="Register" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 cursor-pointer">
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- About Us Section -->
+            <section id="about" class="mt-16 animate-fade-in" style="animation-delay: 0.4s;">
+                <h2 class="text-3xl font-bold text-center text-green-700 mb-8">About Us</h2>
+                <div class="bg-white shadow-lg rounded-lg p-8">
+                    <p class="text-lg text-gray-700 mb-4">Meal Saver is dedicated to reducing food waste and promoting sustainable eating habits. Our platform connects consumers with local restaurants and grocery stores to rescue surplus food that would otherwise go to waste.</p>
+                    <p class="text-lg text-gray-700">By joining Meal Saver, you're not just saving money on great meals - you're also making a positive impact on the environment and your community.</p>
+                </div>
+            </section>
         </div>
-    </div>
+    </main>
+
+    <footer class="bg-green-600 text-white py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Meal Saver</h3>
+                    <p>Reducing food waste, one meal at a time.</p>
+                </div>
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="hover:text-green-200">Home</a></li>
+                        <li><a href="#about" class="hover:text-green-200">About Us</a></li>
+                        <li><a href="#" class="hover:text-green-200">How It Works</a></li>
+                        <li><a href="#contact" class="hover:text-green-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p>Email: sahilpg27@gmail.com</p>
+                    <p>Phone: +91 8307646415</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p>&copy; 2024 Meal Saver. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
