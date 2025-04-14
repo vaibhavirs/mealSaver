@@ -6,6 +6,12 @@ const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 const MealCount = require('./models/mealcount');
+const multer = require('multer');
+const crypto = require("crypto");
+const upload = require("./config/multerconfig");
+const { log } = require("console");
+const { loadEnvFile } = require("process");
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -180,5 +186,12 @@ function isAdmin(req, res, next) {
     }
 }
 
-const PORT = process.env.PORT || 3000;
+app.post("/upload", upload.single("image"), async (req,res)=>{
+    let user = await userModel.findOne({email : req.user.email})
+    user.menupic = req.file.filename ;
+    await user.save();
+    res.redirect("/admin");
+});
+
+const PORT = process.env.PORT || 3080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

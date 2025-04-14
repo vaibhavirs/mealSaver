@@ -10,7 +10,11 @@ const userSchema = new mongoose.Schema({
     mobile: Number,
     password: String,
     year: String,
-    branch: String
+    branch: String ,
+    menupic : {
+        type : String ,
+        default : "menu.png"
+    }
 });
 
 

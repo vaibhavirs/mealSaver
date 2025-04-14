@@ -13,6 +13,7 @@
     </style>
 </head>
 <body class="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen flex flex-col">
+    <!-- Header -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-green-600">Admin Dashboard</h1>
@@ -22,8 +23,10 @@
         </div>
     </header>
 
+    <!-- Main Content -->
     <main class="flex-grow container mx-auto px-4 py-8">
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl mx-auto">
+        <!-- Meal Counts -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl mx-auto mb-8">
             <div class="p-8">
                 <h2 class="text-2xl font-bold mb-6 text-green-700">Today's Meal Counts</h2>
                 <ul class="space-y-4">
@@ -42,8 +45,25 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Upload Menu Section -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl mx-auto">
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-6 text-green-700">Upload Tommorow's Menu</h2>
+                <form autocomplete="off" action="/upload" method="POST" enctype="multipart/form-data" class="space-y-4">
+                    <label for="menuFile" class="block text-lg font-medium text-blue-700">Upload Menu Image:</label>
+                    <input type="file" id="menuFile" name="image" accept="image/*" 
+                           class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-200 focus:ring-opacity-50">
+                    <button type="submit" 
+                            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Upload
+                    </button>
+                </form>
+            </div>
+        </div>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-green-600 text-white py-4 mt-8">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2024 Anna's Mess. All rights reserved.</p>
